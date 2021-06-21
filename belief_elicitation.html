@@ -1,0 +1,307 @@
+
+{% block title %}
+State Beliefs
+{% endblock %}
+
+{% block content %}
+<style>
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .slidecontainer {
+      width: 100%;
+    }
+    
+    .slider {
+      -webkit-appearance: none;
+      width: 50%;
+      height: 25px;
+      background: #d3d3d3;
+      outline: none;
+      opacity: 0.7;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+    }
+    
+    .slider:hover {
+      opacity: 1;
+    }
+    
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 25px;
+      height: 25px;
+      background: #4CAF50;
+      cursor: pointer;
+    }
+    
+    .slider::-moz-range-thumb {
+      width: 25px;
+      height: 25px;
+      background: #4CAF50;
+      cursor: pointer;
+    }
+
+
+
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
+
+
+
+
+
+<p>Do you prefer to:</p>
+<table style="width:80%">
+    <tr>
+        <td id="col10A" >Get $5 if Urn O is picked.</td>
+        <td><button name="decision10" value="A" class="btn btn-primary btn-large" onclick="fun(10)">A</button></td>
+        <td><button name="decision10" value="B" class="btn btn-primary btn-large" onclick="fun(9)">B</button></td>
+        <td id="col10B">Get $5 with 100% chance.</td>
+    </tr>
+    <tr id="elicit_9" style="display:none"> 
+        <td colspan="4" align="center">
+            <input type="range" name='belief' id="id_belief_9"  min="90" max="100" step="1" class="slider"><br>
+            <span id = "output_9"></span>%
+        </td>
+    </tr>
+    <tr>
+        <td id="col9A">Get $5 if Urn O is picked.</td>
+        <td><button name="decision9" value="A" class="btn btn-primary btn-large" onclick="fun(9)">A</button></td>
+        <td><button name="decision9" value="B" class="btn btn-primary btn-large" onclick="fun(8)">B</button></td>
+        <td id="col9B">Get $5 with 90% chance.</td>
+    </tr>
+    <tr id="elicit_8" style="display:none"> 
+        <td colspan="4" align="center">
+            <input type="range" name='belief' id="id_belief_8"  min="80" max="90" step="1" class="slider"><br>
+            <span id = "output_8"></span>%
+        </td>
+    </tr>
+    <tr>
+        <td id="col8A">Get $5 if Urn O is picked.</td>
+        <td><button name="decision8" value="A" class="btn btn-primary btn-large" onclick="fun(8)">A</button></td>
+        <td><button name="decision8" value="B" class="btn btn-primary btn-large" onclick="fun(7)"> B</button></td>
+        <td id="col8B">Get $5 with 80% chance.</td>
+    </tr>
+    <tr id="elicit_7" style="display:none"> 
+        <td colspan="4" align="center">
+            <input type="range" name='belief' id="id_belief_7"  min="70" max="80" step="1" class="slider"><br>
+            <span id = "output_7"></span>%
+        </td>
+    </tr>
+    <tr>
+        <td id="col7A">Get $5 if Urn O is picked.</td>
+        <td><button name="decision7" value="A" class="btn btn-primary btn-large" onclick="fun(7)">A</button></td>
+        <td><button name="decision7" value="B" class="btn btn-primary btn-large" onclick="fun(6)"> B</button></td>
+        <td id="col7B">Get $5 with 70% chance.</td>
+    </tr>
+    <tr id="elicit_6" style="display:none"> 
+        <td colspan="4" align="center">
+            <input type="range" name='belief' id="id_belief_6"  min="60" max="70" step="1" class="slider"><br>
+            <span id = "output_6"></span>%
+        </td>
+    </tr>
+    <tr>
+        <td id="col6A">Get $5 if Urn O is picked.</td>
+        <td><button name="decision6" value="A" class="btn btn-primary btn-large" onclick="fun(6)">A</button></td>
+        <td><button name="decision6" value="B" class="btn btn-primary btn-large" onclick="fun(5)"> B</button></td>
+        <td id="col6B">Get $5 with 60% chance.</td>
+    </tr>
+    <tr id="elicit_5" style="display:none"> 
+        <td colspan="4" align="center">
+            <input type="range" name='belief' id="id_belief_5"  min="50" max="60" step="1" class="slider"><br>
+            <span id = "output_5"></span>%
+        </td>
+    </tr>
+    <tr>
+        <td id="col5A">Get $5 if Urn O is picked.</td>
+        <td><button name="decision5" value="A" class="btn btn-primary btn-large" onclick="fun(5)">A</button></td>
+        <td><button name="decision5" value="B" class="btn btn-primary btn-large" onclick="fun(4)"> B</button></td>
+        <td id="col5B">Get $5 with 50% chance.</td>
+    </tr>
+    <tr id="elicit_4" style="display:none"> 
+        <td colspan="4" align="center">
+            <input type="range" name='belief' id="id_belief_4"  min="40" max="50" step="1" class="slider"><br>
+            <span id = "output_4"></span>%
+        </td>
+    </tr>
+    <tr>
+        <td id="col4A">Get $5 if Urn O is picked.</td>
+        <td><button name="decision4" value="A" class="btn btn-primary btn-large" onclick="fun(4)">A</button></td>
+        <td><button name="decision4" value="B" class="btn btn-primary btn-large" onclick="fun(3)"> B</button></td>
+        <td id="col4B">Get $5 with 40% chance.</td>
+    </tr>
+    <tr id="elicit_3" style="display:none"> 
+        <td colspan="4" align="center">
+            <input type="range" name='belief' id="id_belief_3"  min="30" max="40" step="1" class="slider"><br>
+            <span id = "output_3"></span>%
+        </td>
+    </tr>
+    <tr>
+        <td id="col3A">Get $5 if Urn O is picked.</td>
+        <td><button name="decision3" value="A" class="btn btn-primary btn-large" onclick="fun(3)">A</button></td>
+        <td><button name="decision3" value="B" class="btn btn-primary btn-large" onclick="fun(2)"> B</button></td>
+        <td id="col3B">Get $5 with 30% chance.</td>
+    </tr>
+    <tr id="elicit_2" style="display:none"> 
+        <td colspan="4" align="center">
+            <input type="range" name='belief' id="id_belief_2"  min="20" max="30" step="1" class="slider"><br>
+            <span id = "output_2"></span>%
+        </td>
+    </tr>
+    <tr>
+        <td id="col2A">Get $5 if Urn O is picked.</td>
+        <td><button name="decision2" value="A" class="btn btn-primary btn-large" onclick="fun(2)">A</button></td>
+        <td><button name="decision2" value="B" class="btn btn-primary btn-large" onclick="fun(1)"> B</button></td>
+        <td id="col2B">Get $5 with 20% chance.</td>
+    </tr>
+    <tr id="elicit_1" style="display:none"> 
+        <td colspan="4" align="center">
+            <input type="range" name='belief' id="id_belief_1"  min="10" max="20" step="1" class="slider"><br>
+            <span id = "output_1"></span>%
+        </td>
+    </tr>
+    <tr>
+        <td id="col1A">Get $5 if Urn O is picked.</td>
+        <td><button name="decision1" value="A" class="btn btn-primary btn-large" onclick="fun(1)">A</button></td>
+        <td><button name="decision1" value="B" class="btn btn-primary btn-large" onclick="fun(0)"> B</button></td>
+        <td id="col1B">Get $5 with 10% chance.</td>
+    </tr>
+    <tr id="elicit_0" style="display:none"> 
+        <td colspan="4" align="center">
+            <input type="range" name='belief' id="id_belief_0"  min="0" max="10" step="1" class="slider"><br>
+            <span id = "output_0"></span>%
+        </td>
+    </tr>
+    <tr>
+        <td id="col0A">Get $5 if Urn O is picked.</td>
+        <td><button name="decision0" value="A" class="btn btn-primary btn-large" onclick="fun(0)">A</button></td>
+        <td><button name="decision0" value="B" class="btn btn-primary btn-large" onclick="fun(-1)"> B</button></td>
+        <td id="col0B">Get $5 with 0% chance.</td>
+    </tr>
+</table>
+
+
+
+<script>
+
+    var slider_9 = document.getElementById("id_belief_9");
+        var output_9 = document.getElementById("output_9");
+        output_9.innerHTML = slider_9.value;
+        
+        slider_9.oninput = function() {
+          output_9.innerHTML = this.value;
+        }
+
+    var slider_8 = document.getElementById("id_belief_8");
+        var output_8 = document.getElementById("output_8");
+        output_8.innerHTML = slider_8.value;
+        
+        slider_8.oninput = function() {
+          output_8.innerHTML = this.value;
+        }
+
+    var slider_7 = document.getElementById("id_belief_7");
+        var output_7 = document.getElementById("output_7");
+        output_7.innerHTML = slider_7.value;
+        
+        slider_7.oninput = function() {
+          output_7.innerHTML = this.value;
+        }
+
+    var slider_6 = document.getElementById("id_belief_6");
+        var output_6 = document.getElementById("output_6");
+        output_6.innerHTML = slider_6.value;
+        
+        slider_6.oninput = function() {
+          output_6.innerHTML = this.value;
+        }
+
+    var slider_5 = document.getElementById("id_belief_5");
+        var output_5 = document.getElementById("output_5");
+        output_5.innerHTML = slider_5.value;
+        
+        slider_5.oninput = function() {
+          output_5.innerHTML = this.value;
+        }
+
+    var slider_4 = document.getElementById("id_belief_4");
+        var output_8 = document.getElementById("output_4");
+        output_4.innerHTML = slider_4.value;
+        
+        slider_4.oninput = function() {
+          output_4.innerHTML = this.value;
+        }
+
+    var slider_3 = document.getElementById("id_belief_3");
+        var output_3 = document.getElementById("output_3");
+        output_3.innerHTML = slider_3.value;
+        
+        slider_3.oninput = function() {
+          output_3.innerHTML = this.value;
+        }
+
+    var slider_2 = document.getElementById("id_belief_2");
+        var output_2 = document.getElementById("output_2");
+        output_2.innerHTML = slider_2.value;
+        
+        slider_2.oninput = function() {
+          output_2.innerHTML = this.value;
+        }
+
+    var slider_1 = document.getElementById("id_belief_1");
+        var output_1 = document.getElementById("output_1");
+        output_1.innerHTML = slider_1.value;
+        
+        slider_1.oninput = function() {
+          output_1.innerHTML = this.value;
+        }
+
+    var slider_0 = document.getElementById("id_belief_0");
+        var output_0 = document.getElementById("output_0");
+        output_0.innerHTML = slider_0.value;
+        
+        slider_0.oninput = function() {
+          output_0.innerHTML = this.value;
+        }
+
+    function fun(x){
+        var index_i=1;
+        var index_j=10;
+        var index_x = x.toString();
+        var elicit_id = "";
+        for (let i=0; i<10; i++){
+            index_i=i.toString();
+            elicit_id = "elicit_"+index_i;
+            document.getElementById(elicit_id).style.display='none';
+        }
+        for (let i=0; i<x+1; i++){
+            index_i = i.toString();
+            col_idA = "col"+index_i+"A";
+            col_idB = "col"+index_i+"B";
+            document.getElementById(col_idA).style.backgroundColor='lightblue';
+            document.getElementById(col_idB).style.backgroundColor='white';
+        }
+        for (let j=x+1; j<11; j++){
+            index_j = j.toString();
+            col_idA = "col"+index_j+"A";
+            col_idB = "col"+index_j+"B";
+            document.getElementById(col_idA).style.backgroundColor='white';
+            document.getElementById(col_idB).style.backgroundColor='lightblue';
+        }        
+
+        if (-1<x<10){
+
+            elicit_id = "elicit_"+index_x;
+            document.getElementById(elicit_id).style.display='table-row';
+
+        }
+    }
+</script>
+
+{% endblock %}
