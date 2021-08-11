@@ -1,0 +1,814 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Cards!
+{% endblock %}
+
+
+{% block content %}
+<style>
+.radio-cards input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.radio-cards p#money {
+    display: inline-block;
+    background-color: #ddd;
+    padding: 2px;
+    font-family: sans-serif, Arial;
+    font-size: 14px;
+    width: 100pt;
+    border: 2px solid #444;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.radio-cards label {
+    display: inline-block;
+    background-color: rgb(246, 246, 246);
+    padding: 2px;
+    color: #555;
+    font-family: sans-serif, Arial;
+    font-size: 14px;
+    width: 100pt;
+    border: 2px dashed #ddd;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.radio-cards input[type="radio"]:checked + label {
+    background-color:#bfb;
+    border-color: #4c4;
+}
+
+.radio-cards label:hover {
+  background-color: #dfd;
+}
+
+/* Card 1 Style */ 
+.radio-cards1 input[type="radio"]:checked + label {
+    color: #000;
+    background-color:rgb(232, 174, 243);
+    border: 2px solid;
+    border-color: rgb(224, 101, 183);
+}
+.radio-cards1 label:hover {
+  background-color: rgb(245, 225, 236);
+}
+
+/* Card 2 Style */ 
+.radio-cards2 input[type="radio"]:checked + label {
+    color: #000;
+    background-color:rgb(192, 179, 253);
+    border: 2px solid;
+    border-color: rgb(155, 130, 243);
+}
+.radio-cards2 label:hover {
+  background-color: rgb(238, 236, 248);
+}
+
+
+/* Card 3 Style */ 
+.radio-cards3 input[type="radio"]:checked + label {
+    color: #000;
+    background-color:rgb(253, 179, 179);
+    border: 2px solid;
+    border-color: rgb(243, 130, 158);
+}
+.radio-cards3 label:hover {
+  background-color: rgb(248, 236, 238);
+}
+
+/* Card 4 Style */ 
+.radio-cards4 input[type="radio"]:checked + label {
+    color: #000;
+    background-color:rgb(179, 253, 222);
+    border: 2px solid;
+    border-color: rgb(130, 243, 200);
+}
+.radio-cards4 label:hover {
+  background-color: rgb(236, 248, 247);
+}
+
+/* Card 5 Style */ 
+.radio-cards5 input[type="radio"]:checked + label {
+    color: #000;
+    background-color:rgb(253, 248, 179);
+    border: 2px solid;
+    border-color: rgb(243, 240, 75);
+}
+.radio-cards5 label:hover {
+  background-color: rgb(248, 247, 236);
+}
+
+/* .radio-cards input[type="radio"]:focus + label {
+    border: 2px dashed #444;
+} */
+
+</style>
+
+
+<div class="radio-cards">
+
+<table>
+  <tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_500" value="5" ><label for="form1_500">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_500" value="5" ><label for="form2_500">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_500" value="5" ><label for="form3_500">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_500" value="5" ><label for="form4_500">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_500" value="5" ><label for="form5_500">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $5.00</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_490" value="5" ><label for="form1_490">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_490" value="5" ><label for="form2_490">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_490" value="5" ><label for="form3_490">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_490" value="5" ><label for="form4_490">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_490" value="5" ><label for="form5_490">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $4.90</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_480" value="5" ><label for="form1_480">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_480" value="5" ><label for="form2_480">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_480" value="5" ><label for="form3_480">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_480" value="5" ><label for="form4_480">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_480" value="5" ><label for="form5_480">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $4.80</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_470" value="5" ><label for="form1_470">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_470" value="5" ><label for="form2_470">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_470" value="5" ><label for="form3_470">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_470" value="5" ><label for="form4_470">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_470" value="5" ><label for="form5_470">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $4.70</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_460" value="5" ><label for="form1_460">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_460" value="5" ><label for="form2_460">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_460" value="5" ><label for="form3_460">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_460" value="5" ><label for="form4_460">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_460" value="5" ><label for="form5_460">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $4.60</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_450" value="5" ><label for="form1_450">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_450" value="5" ><label for="form2_450">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_450" value="5" ><label for="form3_450">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_450" value="5" ><label for="form4_450">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_450" value="5" ><label for="form5_450">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $4.50</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_440" value="5" ><label for="form1_440">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_440" value="5" ><label for="form2_440">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_440" value="5" ><label for="form3_440">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_440" value="5" ><label for="form4_440">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_440" value="5" ><label for="form5_440">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $4.40</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_430" value="5" ><label for="form1_430">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_430" value="5" ><label for="form2_430">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_430" value="5" ><label for="form3_430">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_430" value="5" ><label for="form4_430">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_430" value="5" ><label for="form5_430">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $4.30</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_420" value="5" ><label for="form1_420">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_420" value="5" ><label for="form2_420">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_420" value="5" ><label for="form3_420">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_420" value="5" ><label for="form4_420">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_420" value="5" ><label for="form5_420">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $4.20</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_410" value="5" ><label for="form1_410">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_410" value="5" ><label for="form2_410">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_410" value="5" ><label for="form3_410">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_410" value="5" ><label for="form4_410">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_410" value="5" ><label for="form5_410">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $4.10</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_400" value="5" ><label for="form1_400">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_400" value="5" ><label for="form2_400">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_400" value="5" ><label for="form3_400">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_400" value="5" ><label for="form4_400">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_400" value="5" ><label for="form5_400">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $4.00</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_390" value="5" ><label for="form1_390">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_390" value="5" ><label for="form2_390">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_390" value="5" ><label for="form3_390">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_390" value="5" ><label for="form4_390">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_390" value="5" ><label for="form5_390">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $3.90</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_380" value="5" ><label for="form1_380">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_380" value="5" ><label for="form2_380">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_380" value="5" ><label for="form3_380">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_380" value="5" ><label for="form4_380">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_380" value="5" ><label for="form5_380">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $3.80</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_370" value="5" ><label for="form1_370">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_370" value="5" ><label for="form2_370">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_370" value="5" ><label for="form3_370">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_370" value="5" ><label for="form4_370">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_370" value="5" ><label for="form5_370">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $3.70</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_360" value="5" ><label for="form1_360">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_360" value="5" ><label for="form2_360">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_360" value="5" ><label for="form3_360">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_360" value="5" ><label for="form4_360">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_360" value="5" ><label for="form5_360">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $3.60</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_350" value="5" ><label for="form1_350">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_350" value="5" ><label for="form2_350">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_350" value="5" ><label for="form3_350">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_350" value="5" ><label for="form4_350">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_350" value="5" ><label for="form5_350">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $3.50</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_340" value="5" ><label for="form1_340">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_340" value="5" ><label for="form2_340">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_340" value="5" ><label for="form3_340">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_340" value="5" ><label for="form4_340">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_340" value="5" ><label for="form5_340">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $3.40</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_330" value="5" ><label for="form1_330">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_330" value="5" ><label for="form2_330">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_330" value="5" ><label for="form3_330">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_330" value="5" ><label for="form4_330">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_330" value="5" ><label for="form5_330">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $3.30</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_320" value="5" ><label for="form1_320">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_320" value="5" ><label for="form2_320">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_320" value="5" ><label for="form3_320">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_320" value="5" ><label for="form4_320">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_320" value="5" ><label for="form5_320">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $3.20</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_310" value="5" ><label for="form1_310">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_310" value="5" ><label for="form2_310">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_310" value="5" ><label for="form3_310">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_310" value="5" ><label for="form4_310">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_310" value="5" ><label for="form5_310">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $3.10</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_300" value="5" ><label for="form1_300">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_300" value="5" ><label for="form2_300">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_300" value="5" ><label for="form3_300">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_300" value="5" ><label for="form4_300">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_300" value="5" ><label for="form5_300">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $3.00</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_290" value="5" ><label for="form1_290">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_290" value="5" ><label for="form2_290">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_290" value="5" ><label for="form3_290">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_290" value="5" ><label for="form4_290">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_290" value="5" ><label for="form5_290">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $2.90</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_280" value="5" ><label for="form1_280">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_280" value="5" ><label for="form2_280">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_280" value="5" ><label for="form3_280">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_280" value="5" ><label for="form4_280">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_280" value="5" ><label for="form5_280">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $2.80</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_270" value="5" ><label for="form1_270">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_270" value="5" ><label for="form2_270">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_270" value="5" ><label for="form3_270">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_270" value="5" ><label for="form4_270">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_270" value="5" ><label for="form5_270">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $2.70</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_260" value="5" ><label for="form1_260">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_260" value="5" ><label for="form2_260">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_260" value="5" ><label for="form3_260">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_260" value="5" ><label for="form4_260">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_260" value="5" ><label for="form5_260">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $2.60</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_250" value="5" ><label for="form1_250">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_250" value="5" ><label for="form2_250">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_250" value="5" ><label for="form3_250">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_250" value="5" ><label for="form4_250">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_250" value="5" ><label for="form5_250">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $2.50</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_240" value="5" ><label for="form1_240">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_240" value="5" ><label for="form2_240">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_240" value="5" ><label for="form3_240">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_240" value="5" ><label for="form4_240">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_240" value="5" ><label for="form5_240">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $2.40</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_230" value="5" ><label for="form1_230">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_230" value="5" ><label for="form2_230">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_230" value="5" ><label for="form3_230">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_230" value="5" ><label for="form4_230">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_230" value="5" ><label for="form5_230">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $2.30</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_220" value="5" ><label for="form1_220">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_220" value="5" ><label for="form2_220">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_220" value="5" ><label for="form3_220">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_220" value="5" ><label for="form4_220">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_220" value="5" ><label for="form5_220">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $2.20</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_210" value="5" ><label for="form1_210">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_210" value="5" ><label for="form2_210">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_210" value="5" ><label for="form3_210">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_210" value="5" ><label for="form4_210">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_210" value="5" ><label for="form5_210">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $2.10</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_200" value="5" ><label for="form1_200">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_200" value="5" ><label for="form2_200">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_200" value="5" ><label for="form3_200">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_200" value="5" ><label for="form4_200">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_200" value="5" ><label for="form5_200">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $2.00</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_190" value="5" ><label for="form1_190">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_190" value="5" ><label for="form2_190">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_190" value="5" ><label for="form3_190">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_190" value="5" ><label for="form4_190">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_190" value="5" ><label for="form5_190">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $1.90</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_180" value="5" ><label for="form1_180">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_180" value="5" ><label for="form2_180">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_180" value="5" ><label for="form3_180">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_180" value="5" ><label for="form4_180">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_180" value="5" ><label for="form5_180">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $1.80</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_170" value="5" ><label for="form1_170">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_170" value="5" ><label for="form2_170">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_170" value="5" ><label for="form3_170">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_170" value="5" ><label for="form4_170">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_170" value="5" ><label for="form5_170">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $1.70</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_160" value="5" ><label for="form1_160">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_160" value="5" ><label for="form2_160">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_160" value="5" ><label for="form3_160">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_160" value="5" ><label for="form4_160">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_160" value="5" ><label for="form5_160">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $1.60</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_150" value="5" ><label for="form1_150">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_150" value="5" ><label for="form2_150">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_150" value="5" ><label for="form3_150">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_150" value="5" ><label for="form4_150">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_150" value="5" ><label for="form5_150">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $1.50</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_140" value="5" ><label for="form1_140">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_140" value="5" ><label for="form2_140">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_140" value="5" ><label for="form3_140">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_140" value="5" ><label for="form4_140">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_140" value="5" ><label for="form5_140">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $1.40</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_130" value="5" ><label for="form1_130">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_130" value="5" ><label for="form2_130">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_130" value="5" ><label for="form3_130">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_130" value="5" ><label for="form4_130">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_130" value="5" ><label for="form5_130">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $1.30</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_120" value="5" ><label for="form1_120">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_120" value="5" ><label for="form2_120">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_120" value="5" ><label for="form3_120">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_120" value="5" ><label for="form4_120">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_120" value="5" ><label for="form5_120">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $1.20</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_110" value="5" ><label for="form1_110">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_110" value="5" ><label for="form2_110">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_110" value="5" ><label for="form3_110">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_110" value="5" ><label for="form4_110">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_110" value="5" ><label for="form5_110">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $1.10</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_100" value="5" ><label for="form1_100">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_100" value="5" ><label for="form2_100">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_100" value="5" ><label for="form3_100">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_100" value="5" ><label for="form4_100">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_100" value="5" ><label for="form5_100">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $1.00</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_90" value="5" ><label for="form1_90">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_90" value="5" ><label for="form2_90">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_90" value="5" ><label for="form3_90">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_90" value="5" ><label for="form4_90">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_90" value="5" ><label for="form5_90">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $0.90</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_80" value="5" ><label for="form1_80">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_80" value="5" ><label for="form2_80">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_80" value="5" ><label for="form3_80">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_80" value="5" ><label for="form4_80">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_80" value="5" ><label for="form5_80">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $0.80</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_70" value="5" ><label for="form1_70">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_70" value="5" ><label for="form2_70">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_70" value="5" ><label for="form3_70">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_70" value="5" ><label for="form4_70">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_70" value="5" ><label for="form5_70">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $0.70</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_60" value="5" ><label for="form1_60">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_60" value="5" ><label for="form2_60">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_60" value="5" ><label for="form3_60">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_60" value="5" ><label for="form4_60">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_60" value="5" ><label for="form5_60">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $0.60</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_50" value="5" ><label for="form1_50">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_50" value="5" ><label for="form2_50">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_50" value="5" ><label for="form3_50">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_50" value="5" ><label for="form4_50">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_50" value="5" ><label for="form5_50">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $0.50</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_40" value="5" ><label for="form1_40">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_40" value="5" ><label for="form2_40">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_40" value="5" ><label for="form3_40">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_40" value="5" ><label for="form4_40">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_40" value="5" ><label for="form5_40">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $0.40</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_30" value="5" ><label for="form1_30">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_30" value="5" ><label for="form2_30">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_30" value="5" ><label for="form3_30">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_30" value="5" ><label for="form4_30">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_30" value="5" ><label for="form5_30">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $0.30</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_20" value="5" ><label for="form1_20">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_20" value="5" ><label for="form2_20">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_20" value="5" ><label for="form3_20">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_20" value="5" ><label for="form4_20">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_20" value="5" ><label for="form5_20">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $0.20</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_10" value="5" ><label for="form1_10">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_10" value="5" ><label for="form2_10">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_10" value="5" ><label for="form3_10">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_10" value="5" ><label for="form4_10">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_10" value="5" ><label for="form5_10">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $0.10</p></td>
+    <td></td><td></td>
+    </tr><tr> 
+    <td><span class="radio-cards1"><input type="radio" name="form1" id="form1_00" value="5" ><label for="form1_00">Form 1</label></span></td> 
+    <td><span class="radio-cards2"><input type="radio" name="form2" id="form2_00" value="5" ><label for="form2_00">Form 2</label></span></td> 
+    <td><span class="radio-cards3"><input type="radio" name="form3" id="form3_00" value="5" ><label for="form3_00">Form 3</label></span></td> 
+    <td><span class="radio-cards4"><input type="radio" name="form4" id="form4_00" value="5" ><label for="form4_00">Form 4</label></span></td> 
+    <td><span class="radio-cards5"><input type="radio" name="form5" id="form5_00" value="5" ><label for="form5_00">Form 5</label></span></td> 
+    </tr>
+    <tr>
+    <td></td><td></td>
+    <td><p id="money">No form + $0.00</p></td>
+    <td></td><td></td>
+    </tr>
+  
+</table>
+
+
+</div>
+
+{% endblock %}
+
+<!-- 
+<style>
+    body{
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      color: #333;
+      background-color: #eee;
+    }
+    
+    h1, h2, h3, h4, h5, h6{
+      font-weight: 200;
+    }
+    
+    h1{
+      text-align: center;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #2fcc71;
+      max-width: 40%;
+      margin: 20px auto;
+    }
+    
+    /* CONTAINERS */
+    
+    .container {max-width: 850px; width: 100%; margin: 0 auto;}
+    .four { width: 32.26%; max-width: 32.26%;}
+    
+    
+    /* COLUMNS */
+    
+    .col {
+      display: block;
+      float:left;
+      margin: 1% 0 1% 1.6%;
+    }
+    
+    .col:first-of-type { margin-left: 0; }
+    
+    /* CLEARFIX */
+    
+    .cf:before,
+    .cf:after {
+        content: " ";
+        display: table;
+    }
+    
+    .cf:after {
+        clear: both;
+    }
+    
+    .cf {
+        *zoom: 1;
+    }
+    
+    /* FORM */
+    
+    .form .plan input, .form .payment-plan input, .form .payment-type input{
+      display: none;
+    }
+    
+    .form label{
+      position: relative;
+      color: #fff;
+      background-color: #aaa;
+      font-size: 12px;
+      text-align: center;
+      height: 20px;
+      line-height: 20px;
+      display: block;
+      cursor: pointer;
+      border: 2px solid transparent;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    
+    .form .plan input:checked + label, .form .payment-plan input:checked + label, .form .payment-type input:checked + label{
+      border: 3px solid #333;
+      background-color: #2fcc71;
+    }
+    
+    
+    .submit{
+      padding: 15px 60px;
+      display: inline-block;
+      border: none;
+      margin: 20px 0;
+      background-color: #2fcc71;
+      color: #fff;
+      border: 2px solid #333;
+      font-size: 18px;
+      -webkit-transition: transform 0.3s ease-in-out;
+      -o-transition: transform 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .submit:hover{
+      cursor: pointer;
+      transform: rotateX(360deg);
+    }
+    
+    </style>
+    
+    
+    <form class="form cf">
+        <section class="plan cf">
+          <h2>Choose a plan:</h2>
+          <input type="radio" name="radio1" id="free" value="free"><label class="free-label four col" for="free">Free</label>
+          <input type="radio" name="radio1" id="basic" value="basic"><label class="basic-label four col" for="basic">Basic</label>
+          <input type="radio" name="radio1" id="premium" value="premium"><label class="premium-label four col" for="premium">Premium</label>
+        </section>
+        <section class="payment-plan cf">
+          <h2>Select a payment plan:</h2>
+          <input type="radio" name="radio2" id="monthly" value="monthly" checked><label class="monthly-label four col" for="monthly">Monthly</label>
+          <input type="radio" name="radio2" id="yearly" value="yearly"><label class="yearly-label four col" for="yearly">Yearly</label>
+        </section>
+        <section class="payment-type cf">
+          <h2>Select a payment type:</h2>
+          <input type="radio" name="radio3" id="credit" value="credit"><label class="credit-label four col" for="credit">Credit Card</label>
+          <input type="radio" name="radio3" id="debit" value="debit"><label class="debit-label four col" for="debit">Debit Card</label>
+          <input type="radio" name="radio3" id="paypal" value="paypal" checked><label class="paypal-label four col" for="paypal">Paypal</label>
+        </section>  
+        <input class="submit" type="submit" value="Submit">   
+      </form>
+    <div class="container">
+    
+       
+      </div> -->
